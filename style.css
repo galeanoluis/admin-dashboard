@@ -1,3 +1,7 @@
+:root {
+    --headerPadding: 2em;
+}
+
 * {
     font-family: Roboto;
 }
@@ -5,7 +9,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: minmax(12em, 1fr) 6fr;
-    grid-template-rows: 1fr 10fr;
+    grid-template-rows: 1fr 6fr;
 }
 .sidebar {
     background-color: rgb(72, 86, 134);
@@ -15,6 +19,7 @@ body {
     flex-direction: column;
     gap: 3em;
     padding: 1em;
+    z-index: 2;
 }
 .sidebar>ul {
     display: flex;
@@ -31,11 +36,208 @@ body {
 .sidebar>ul>li>a:visited {
     color: white;
 }
-.sidebar>ul>li>a>img {
+.sidebar>ul>li>a>img,
+.searchbar>img {
     width: 1em;
 }
 .logo {
     font-family: "Dancing Script";
     font-weight: 600;
     font-size: 3em;
+}
+header {
+    box-shadow: 0px 2px 5px black;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5em;
+}
+.header-top {
+    display: grid;
+    grid-template-columns: minmax(20em, 30em) 1fr;
+    align-items: center;
+}
+.searchbar {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding-left: var(--headerPadding);
+}
+.searchbar>input {
+    width: 100%;
+    background-color:rgb(211, 211, 211);
+    border-style: none;
+    border-radius: 10px;
+    padding: 0.35em 0.5em;
+}
+.userinfo {
+    display: flex;
+    justify-content: end;
+    gap: 1em;
+    padding-right: var(--headerPadding);
+}
+.userinfo>div {
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+.userinfo>img{
+    width: 1.5em;
+}
+.userinfo>img+img,
+.user>img  {
+    width: 2em;
+    height: 2em;
+}
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5em;
+}
+.welcome {
+    display: flex;
+    padding-left: var(--headerPadding);
+    gap: 0.5em;
+    align-items: center;
+    font-family: Roboto;
+    font-weight: bold;
+}
+.welcome>div>p {
+    font-size: 0.7em;
+}
+.welcome>div>h2 {
+    font-size: 1.2em;
+}
+.welcome>img {
+    width: 3em;
+}
+.create {
+    padding-right: var(--headerPadding);
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+}
+.create>button {
+    border-style: none;
+    background-color: rgb(72, 86, 134);
+    color: white;
+    font-family: Roboto;
+    font-weight: bolder;
+    width: 5em;
+    height: 2em;
+    border-radius: 20px;
+}
+.create>button:hover {
+    cursor: pointer;
+    background-color: rgb(89, 107, 167);
+}
+.create>button>:active {
+    background-color: rgb(53, 64, 100);
+}
+main {
+    z-index: -1;
+    background-color: rgb(211, 211, 211);
+    display: grid;
+    grid-template-columns: 4fr minmax(17.5em, 1fr);
+    gap: 1em;
+    padding-top: 2em;
+    padding-left: 1em;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-bottom: 0.5em;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20em);
+    gap: 1em;
+    
+}
+.project {
+    background-color: white;
+    height: 11em;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 0px 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    column-gap: 1.2em;
+    padding-right: 1em;
+}
+.color-div {
+    grid-row: 1/4;
+    width: 0.5em;
+    background-color: rgb(255, 102, 102);
+    border-end-start-radius: 15px;
+    border-start-start-radius: 15px;
+
+}
+.icons {
+    align-self: end;
+    justify-self: end;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+}
+.project>h4 {
+    display: flex;
+    align-items: end;
+    font-weight: bold;
+    font-size: 0.9em;
+
+}
+.project>p {
+    font-size: 0.85em;
+    color:rgb(63, 63, 63);
+}
+.project>div>img {
+    width: 1em;
+}
+.right-bar {
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: sticky;
+}
+.announcements,
+.trending {
+    background-color:white;
+}
+.announcements {
+    display: grid;
+    gap: 0.8em;
+    padding: 1.8em 1.5em;
+    border-radius: 15px;
+}
+.line {
+    height: 0.01em;
+    background-color:rgb(129, 129, 129);
+}
+.announcement>h5,
+.user>h5 {
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.announcement>p,
+.user>p {
+    font-size: 0.7em;
+    color: rgb(63, 63, 63);
+}
+.trending {
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    align-items: center;
+    border-radius: 15px;
+}
+.user {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.user>img {
+    grid-row: 1/3;
 }
